@@ -42,6 +42,22 @@ git checkout -b SC-#### databricks/master
 git branch -D <branch>
 ```
 
+### Fetch from a different branch
+```
+git fetch databricks dbr-branch-9.x
+#or 
+git fetch databricks dbr-branch-10.x
+```
+- Get a local branch from a different branch 
+```
+git checkout -b sc-80500-10.x databricks/dbr-branch-10.x
+```
+
+### Check-pick a commit
+```
+git cherry-pick <commit hash>
+```
+
 ### Revert changes made to your working copy, do this:
 ```
 git checkout .
