@@ -105,6 +105,12 @@ bazel query //sql/... | grep DeltaSharingCommandsSuite
 bin/scalafmt path/to/file
 ```
 
+### Build Tess Shard from PR
+Reference: https://databricks.atlassian.net/wiki/spaces/UN/pages/794232213/Test+Shard+go+testshard+go+help-testshard#TestShard(go%2Ftestshard%2Cgo%2Fhelp-testshard)-viaJenkins
+```
+jenkins build-aws-cons
+```
+
 ### Build Test Shard from universe/
 - First, get access to dev kubernetes
 ```
