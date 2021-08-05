@@ -92,6 +92,18 @@ bazel run path:test -- -z “test name”
 ```
 build/sbt 'sql/testOnly *SessionStateSuite -- -z "custom string"'  
 ```
+And usually need to run the command below to export JAVA_HOME
+```
+source ~/.bashrc
+```
+Content in .bashrc:
+```
+# JAVA (sbt related)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+
+export UNIVERSE_ROOT=~/universe
+export PATH=$PATH:$UNIVERSE_ROOT/experimental/bin
+```
 
 ### Find test target 
 ```
