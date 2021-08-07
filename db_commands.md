@@ -135,6 +135,24 @@ bin/get-kube-access dev
 ./bin/testshard create --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou --feature-tier 7
 ```
 
+### Kubernetes Commands 
+- First, get access to kubernetes, dev or staging or prod
+```
+bin/get-kube-access dev
+bin/get-kube-access staging
+```
+-- If you want to run `exec -it` then need to select "central kubernetes and services - write access", and need a ES-xxx Jira ticket to justify the access.
+
+- Second, set context and namespace, and run other commands as needed:
+```
+kubectl config set-context staging-aws-us-west-2 --namespace=managed-catalog
+
+kubectl get pods | grep managed-catalog
+kubectl logs <pod-name>
+kubectl exec -it <pod-name> bash
+```
+
+
 ### Custom DBR Image
 
 ```
