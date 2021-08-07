@@ -152,6 +152,8 @@ kubectl logs <pod-name>
 kubectl exec -it <pod-name> bash
 ```
 
+### Debug DeltaSharing Database
+After loging into pods, run some scripts under scripts or sqlscripts.
 
 ### Custom DBR Image
 
