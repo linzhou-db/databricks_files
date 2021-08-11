@@ -172,6 +172,7 @@ local_repository(
 4. Select your uploaded image. Remember to apply the `custom:` prefix.
 ```
 ### Rerun Jenkins Tests
+Comment in the PR
 ```
 jenkins retest this please
 ```
