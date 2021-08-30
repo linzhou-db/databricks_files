@@ -147,6 +147,8 @@ bin/get-kube-access staging
 ```
 kubectl config set-context staging-aws-us-west-2 --namespace=managed-catalog
 
+kubectl config use-context staging-aws-us-west-2
+
 kubectl get pods | grep managed-catalog
 kubectl logs <pod-name>
 kubectl exec -it <pod-name> bash
@@ -154,6 +156,11 @@ kubectl exec -it <pod-name> bash
 
 ### Debug DeltaSharing Database
 After loging into pods, run some scripts under scripts or sqlscripts.
+
+#### To log in mysql
+```
+root@managed-catalog-58745b4745-wc62g:/databricks# python scripts/mysql_console
+```
 
 ### Custom DBR Image
 
