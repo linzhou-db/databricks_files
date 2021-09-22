@@ -1,6 +1,6 @@
 # DUST
 ### Access DUST Pre-Provisioned Workspace
-First follow necessary steps on "Setting up Databricks CLI"
+First follow necessary steps on ["Setting up Databricks CLI"](https://databricks.atlassian.net/wiki/spaces/UN/pages/2285109449/Testing+Unity+Catalog+in+Staging+go+uc+staging#[inlineExtension]Setting-up-Databricks-CLI) under go/uc/staging
 ```
 $./venv/bin/databricks --profile dust configure --host https://dbc-07e4ca03-cc44.staging.cloud.databricks.com --token
 ```
