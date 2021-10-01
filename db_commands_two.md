@@ -14,3 +14,23 @@ Then you can run the command below to check available cli
 ```
 $uc 
 ```
+
+# Delta Sharing CLI
+Clone the git repository and checkout the branch
+```
+~/% git clone git@github.com:adamcain-db/databricks-cli.git
+~/% cd databricks-cli
+databricks-cli/% git checkout SC57404-add-managed-catalog-cli 
+```
+
+There's no PR review needed, changes are merged after committing and pushing.
+
+To test local changes (not tried yet)
+```
+$virtualenv venv
+$. venv/bin/activate
+$pip install -r tox-requirements.txt
+$pip install 'tabulate>=0.7.7'
+$pip install 'click>=6.7'
+$export PYTHONPATH=/Users/adam.cain/src/databricks-cli:/Users/adam.cain/src/databricks-cli/venv/lib/python2.7/site-packages
+```
