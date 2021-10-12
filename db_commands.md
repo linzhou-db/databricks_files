@@ -132,7 +132,9 @@ bin/get-kube-access dev
 
 - Third, run the following command
 ```
-./bin/testshard create --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou --feature-tier 7
+./bin/testshard create --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou-2 --feature-tier 7
+./bin/testshard update --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou-2  --services [all|managed-catalog]
+
 ```
 
 ### Kubernetes Commands 
