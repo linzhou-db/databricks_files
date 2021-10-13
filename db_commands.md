@@ -132,11 +132,16 @@ bin/get-kube-access dev
 
 - Third, run the following command
 ```
-./bin/testshard create --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou-2 --feature-tier 7
-./bin/testshard update --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou-2  --services [all|managed-catalog]
-
+./bin/testshard create --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou --feature-tier 7
+./bin/testshard update --context dev-aws-us-east-1 --shard-name test-shard-lin-zhou  --services [all|managed-catalog]
 ```
 
+To test Delta Sharing features, follow https://databricks.atlassian.net/wiki/spaces/UN/pages/2325678344/Testing+Unity+Catalog+in+test+shard+go+uc+dev#Test-UC-in-AWS-Test-Shard%3A
+
+To debug logs and sql tables, follow commands in the "Kubernetes Commands" section, with the following command being changed: 
+```
+kubectl config set-context staging-aws-us-west-2 --namespace=test-shard-lin-zhou
+```
 ### Kubernetes Commands 
 - First, get access to kubernetes, dev or staging or prod
 ```
