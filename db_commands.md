@@ -190,3 +190,19 @@ Comment in the PR
 ```
 jenkins retest this please
 ```
+
+### Curl Examples
+On a test shard, please update the shard url and PAT as needed
+```
+-- List Metastores
+curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer dapid272febd4ea8d4d902430d9ffd843f09"  https://dbc-7c12bb12-2940.dev.databricks.com/api/2.0/unity-catalog/metastores/
+
+-- List Recipients
+curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer dapid272febd4ea8d4d902430d9ffd843f09"  https://dbc-7c12bb12-2940.dev.databricks.com/api/2.0/unity-catalog/recipients/
+
+-- Create Recipient
+curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer dapid272febd4ea8d4d902430d9ffd843f09"  https://dbc-7c12bb12-2940.dev.databricks.com/api/2.0/unity-catalog/recipients -X POST -d '{"name": "lin_r_3"}'
+
+-- Rotate Token
+curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer dapid272febd4ea8d4d902430d9ffd843f09"  https://dbc-7c12bb12-2940.dev.databricks.com/api/2.0/unity-catalog/recipients/lin_recipient_3/rotate-token -X POST -d '{"existing_token_expire_in_seconds": "20"}'
+```
