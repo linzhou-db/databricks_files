@@ -140,7 +140,8 @@ To test Delta Sharing features, follow https://databricks.atlassian.net/wiki/spa
 
 To debug logs and sql tables, follow commands in the "Kubernetes Commands" section, with the following command being changed: 
 ```
-kubectl config set-context staging-aws-us-west-2 --namespace=test-shard-lin-zhou
+kubectl config set-context dev-aws-us-east-1 --namespace=test-shard-lin-zhou
+kubectl config use-context dev-aws-us-east-1
 ```
 ### Kubernetes Commands 
 - First, get access to kubernetes, dev or staging or prod
