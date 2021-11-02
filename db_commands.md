@@ -206,4 +206,7 @@ curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer <PAT>"  h
 
 -- Rotate Token
 curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer <PAT>"  https://dbc-7c12bb12-2940.dev.databricks.com/api/2.0/unity-catalog/recipients/lin_recipient_3/rotate-token -X POST -d '{"existing_token_expire_in_seconds": "20"}'
+
+-- Create Credential
+curl -X POST -u lin.zhou@databricks.com -H "Content-Type: application/json" -n 'https://accounts.dev.databricks.com/api/2.0/accounts/d5cf2acf-6a66-4826-8ff8-cb1cf0b28a63/credentials' -d '{ "credentials_name": "us-west-2-dev-managed-catalog-auditlog-api-credential", "aws_credentials": { "sts_role": { "role_arn": "arn:aws:iam::707343435239:role/us-west-2-dev-managed-catalog-auditlog-role" } } }'
 ```
