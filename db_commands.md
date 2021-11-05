@@ -162,6 +162,11 @@ kubectl logs <pod-name>
 kubectl exec -it <pod-name> bash
 ```
 
+Another helpful command
+```
+alias km='kubectl get pods -l app=managed-catalog'
+```
+
 ### Debug DeltaSharing Database
 After loging into pods, run some scripts under scripts or sqlscripts.
 
