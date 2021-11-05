@@ -210,3 +210,15 @@ curl -n -H "Content-Type: application/json"  -H "Authorization: Bearer <PAT>"  h
 -- Create Credential
 curl -X POST -u lin.zhou@databricks.com -H "Content-Type: application/json" -n 'https://accounts.dev.databricks.com/api/2.0/accounts/d5cf2acf-6a66-4826-8ff8-cb1cf0b28a63/credentials' -d '{ "credentials_name": "us-west-2-dev-managed-catalog-auditlog-api-credential", "aws_credentials": { "sts_role": { "role_arn": "arn:aws:iam::707343435239:role/us-west-2-dev-managed-catalog-auditlog-role" } } }'
 ```
+
+### Audit Log Curl Commands
+```
+-- Create an Audit Log Delivery Config
+curl -X POST -u lin.zhou@databricks.com -H "Content-Type: application/json" -n 'https://accounts.staging.cloud.databricks.com/api/2.0/accounts/7a99b43c-b46c-432b-b0a7-814217701909/log-delivery' -d '{ "log_delivery_configuration": { "log_type": "AUDIT_LOGS", "config_name": "us-west-2-staging-managed-catalog-auditlog-config", "output_format": "JSON", "credentials_id": "d6e025e5-2e3a-406f-8469-c538ddc559fa", "storage_configuration_id": "e0f26884-e0a4-411e-9e80-c2026e96256b", "delivery_path_prefix": "audit-logs" } }'
+
+-- Get All Audit Log Delivery Configs
+$curl -X GET -u lin.zhou@databricks.com -H "Content-Type: application/json" -n 'https://accounts.staging.cloud.databricks.com/api/2.0/accounts/7a99b43c-b46c-432b-b0a7-814217701909/log-delivery'
+
+-- Disable an Audit Log Delivery Config
+$curl -X PATCH -u lin.zhou@databricks.com -H "Content-Type: application/json" -n 'https://accounts.staging.cloud.databricks.com/api/2.0/accounts/7a99b43c-b46c-432b-b0a7-814217701909/log-delivery/c565b2cc-3c2f-11ec-add4-024cc3f1e8ce' -d '{ "status": "DISABLED"}'
+```
