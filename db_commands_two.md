@@ -34,3 +34,24 @@ $pip install 'tabulate>=0.7.7'
 $pip install 'click>=6.7'
 $export PYTHONPATH=/Users/adam.cain/src/databricks-cli:/Users/adam.cain/src/databricks-cli/venv/lib/python2.7/site-packages
 ```
+
+# Delta Sharing OSS Repository
+To get a local copy of the repository:
+```
+git clone https://github.com/delta-io/delta-sharing.git
+```
+
+To check the local repository details
+```
+git remote -v
+```
+
+To check the status of a branch:
+```
+git status
+```
+
+To checkout a branch:
+```
+git checkout -b SC-88052 -t origin/main
+```
