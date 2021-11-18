@@ -55,3 +55,23 @@ To checkout a branch:
 ```
 git checkout -b SC-88052 -t origin/main
 ```
+
+# Test Delta Sharing CLI Local Changes
+For example, if dtabricks-cli from SC57404-add-managed-catalog-cli branch is checked out to /Users/lin.zhou/databricks-cli, and local changes are made
+
+- update python version as needed: python3.9 or python2.7, etc.
+```
+virtualenv venv
+. venv/bin/activate
+pip install -r tox-requirements.txt
+pip install 'tabulate>=0.7.7'
+pip install 'click>=6.7'
+export PYTHONPATH=/Users/adam.cain/src/databricks-cli:/Users/adam.cain/src/databricks-cli/venv/lib/python3.9/site-packages
+pip install -e ./
+```
+
+Then you can run and other commands in the [section](https://databricks.atlassian.net/wiki/spaces/UN/pages/2285109449/Testing+Unity+Catalog+in+Staging+go+uc+staging#[inlineExtension]Setting-up-Databricks-CLI)
+```
+$databricks
+```
+
