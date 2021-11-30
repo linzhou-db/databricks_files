@@ -58,6 +58,13 @@ git checkout -b sc-80500-10.x databricks/dbr-branch-10.x
 git cherry-pick <commit hash>
 ```
 
+### In one workflow
+```
+git fetch databricks
+git checkout -b sc-89277-10.1 databricks/dbr-branch-10.1
+git cherry pick -sex <your-commit>
+```
+
 ### Revert changes made to your working copy, do this:
 ```
 git checkout .
