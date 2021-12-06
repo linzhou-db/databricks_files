@@ -150,6 +150,11 @@ To debug logs and sql tables, follow commands in the "Kubernetes Commands" secti
 kubectl config set-context dev-aws-us-east-1 --namespace=test-shard-lin-zhou
 kubectl config use-context dev-aws-us-east-1
 ```
+
+Find test shard
+```
+bin/testshard find --env dev --user-email=lin.zhou@databricks.com
+```
 ### Kubernetes Commands 
 - First, get access to kubernetes, dev or staging or prod
 ```
