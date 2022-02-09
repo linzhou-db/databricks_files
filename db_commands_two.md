@@ -22,8 +22,13 @@ Clone the git repository and checkout the branch
 ~/% cd databricks-cli
 databricks-cli/% git checkout SC57404-add-managed-catalog-cli 
 ```
-
-There's no PR review needed, changes are merged after committing and pushing.
+Create a PR:
+```
+git checkout -b local-branch-name
+git add .
+git commit -m "message"
+git push origin HEAD
+```
 
 # Test Delta Sharing CLI Local Changes
 For example, if dtabricks-cli from SC57404-add-managed-catalog-cli branch is checked out to /Users/lin.zhou/databricks-cli, and local changes are made
