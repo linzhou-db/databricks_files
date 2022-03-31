@@ -155,6 +155,14 @@ Find test shard
 ```
 bin/testshard find --env dev --user-email=lin.zhou@databricks.com
 ```
+
+Debug server logs on Test Shard
+```
+kubectl config use-context dev-aws-us-east-1
+kubectl config set-context dev-aws-us-east-1 --namespace=test-shard-lin-zhou
+kubectl get pods | grep managed-catalog
+kubectl logs <pod-name>
+```
 ### Kubernetes Commands 
 - First, get access to kubernetes, dev or staging or prod
 ```
