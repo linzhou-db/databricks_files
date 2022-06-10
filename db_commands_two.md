@@ -72,5 +72,31 @@ To checkout a branch:
 git checkout -b SC-88052 -t origin/main
 ```
 
+# Delta Sharing OSS Local Jar
+build jar from local files
+```
+build/sbt spark/publishM2
+```
+Remove cache jars
+```
+rm -R /Users/lin.zhou/.ivy2/cache/io.delta/delta-sharing-spark_2.12 
+rm  /Users/lin.zhou/.ivy2/jars/io.delta_delta-sharing-spark_2.12-0.5.0-SNAPSHOT.jar
+rm -R /Users/lin.zhou/.m2/repository/io/delta/delta-sharing-spark_2.12/0.5.0-SNAPSHOT/
+```
 
+Debug local python changes:
+```
+# install pyspark
+pip install pyspark
+​
+# publish the spark connector to ~/.m2
+build/sbt spark/publishM2
+​
+# install python connector
+cd python/
+pip install -e .
+​
+# Start python cli
+python
+```
 
