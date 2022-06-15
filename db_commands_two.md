@@ -100,3 +100,8 @@ pip install -e .
 python
 ```
 
+# DBR Custom Image With Local Changes
+1. Make code changes in runtime/
+2. commit and get the commit hash
+3. update universe/spark/versions/3.4/versions.bzl (as of 2022/06/15)
+4. in universe/ run  bazel run //spark/images:12.x-snapshot-scala2.12_upload_image (as of 2022/06/15)
