@@ -105,3 +105,15 @@ python
 2. commit and get the commit hash
 3. update universe/spark/versions/3.4/versions.bzl (as of 2022/06/15)
 4. in universe/ run  bazel run //spark/images:12.x-snapshot-scala2.12_upload_image (as of 2022/06/15)
+
+# Custom SQL Endpoint/SQL Warehouse
+First, create a random sql endpoint from the workspace, then get the warehouse id, warehouses/<warehouse id>/
+```
+$ TOKEN=<PAT>
+$ WORKSPACE_URL=https://e2-dogfood-unity-catalog-us-east-1.staging.cloud.databricks.com
+
+$ curl -X POST -H "Authentication: Bearer $TOKEN" \
+-H 'X-Databricks-Allow-Internal: true' \
+"$WORKSPACE_URL/api/2.0/sql/warehouses/1a467c732b86babc/edit?debug=true" \
+-d '{ "confs": { "test_overrides": { "runtime_version": "custom:custom-local__12.x-snapshot-scala2.12__unknown__sc-101877__2572faa__66ab7de__lin.zhou__2633d8a__format-2.lz4" } } }'
+```
