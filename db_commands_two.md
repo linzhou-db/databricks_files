@@ -100,6 +100,25 @@ pip install -e .
 python
 ```
 
+# Replace Jar used in a cluster
+First, check the existing jar
+```
+%sh ls -lh /databricks/jars | grep delta-sharing-spark
+```
+
+Second, upload a locally created jar(could be downloaded from https://repo1.maven.org/maven2/io/delta/delta-sharing-spark_2.12/0.5.1/) through "File" -> "upload data", then you will get a file path.
+
+Third, override the jar in jars with the same file name
+```
+%sh cp /dbfs/FileStore/shared_uploads/lin.zhou@databricks.com/delta_sharing_spark_2_12_0_5_1.jar /databricks/jars/----ws_3_4--mvn--hadoop3--io.delta--delta-sharing-spark_2.12--io.delta__delta-sharing-spark_2.12__0.5.0.jar
+```
+
+Then find the DriverDaemon and kill it to let it restart with the new jar:
+```
+%sh jps
+%sh kill -9 xxx
+```
+
 # DBR Custom Image With Local Changes
 1. Make code changes in runtime/
 2. commit and get the commit hash
