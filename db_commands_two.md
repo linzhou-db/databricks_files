@@ -122,8 +122,23 @@ Then find the DriverDaemon and kill it to let it restart with the new jar:
 # DBR Custom Image With Local Changes
 1. Make code changes in runtime/
 2. commit and get the commit hash
-3. update universe/spark/versions/3.4/versions.bzl (as of 2022/06/15)
-4. in universe/ run  bazel run //spark/images:12.x-snapshot-scala2.12_upload_image (as of 2022/06/15)
+3. may need to update universe/WORKSPACE file:
+```
+local_repository(
+  name = "workspace_spark_3_4",
+  path = "../runtime",
+)
+#repo_archive(
+#    name = "workspace_spark_3_4",
+#    organization = "databricks",
+#    repo = "runtime",
+#    databricks_commit = spark_3_4_commit,
+#    visibility = ["//visibility:public"],
+#    repo_mapping = {"@external_universe": "@" },
+#)
+```
+5. update universe/spark/versions/3.4/versions.bzl (as of 2022/09/16)
+6. in universe/ run  bazel run //spark/images:13.x-snapshot-scala2.12_upload_image (as of 2022/09/16)
 
 # Custom SQL Endpoint/SQL Warehouse
 First, create a random sql endpoint from the workspace, then get the warehouse id, warehouses/<warehouse id>/
@@ -134,5 +149,6 @@ $ WORKSPACE_URL=https://e2-dogfood-unity-catalog-us-east-1.staging.cloud.databri
 $ curl -X POST -H "Authentication: Bearer $TOKEN" \
 -H 'X-Databricks-Allow-Internal: true' \
 "$WORKSPACE_URL/api/2.0/sql/warehouses/1a467c732b86babc/edit?debug=true" \
--d '{ "confs": { "test_overrides": { "runtime_version": "custom:custom-local__12.x-snapshot-scala2.12__unknown__sc-101877__2572faa__66ab7de__lin.zhou__2633d8a__format-2.lz4" } } }'
+-d '{ "confs": { "test_overrides": { "runtime_version": "custom:custom-local__
+  -snapshot-scala2.12__unknown__sc-101877__2572faa__66ab7de__lin.zhou__2633d8a__format-2.lz4" } } }'
 ```
