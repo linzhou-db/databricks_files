@@ -2,8 +2,9 @@
 
 - how to test python: https://github.com/delta-io/delta-sharing#python-connector-1
 - how to test scala: https://github.com/delta-io/delta-sharing#apache-spark-connector-and-delta-sharing-server
-- to run the spark connector test: run build/sbt spark/test
-- to run the server test: run build/sbt server/test
+- to run the spark connector test: `build/sbt spark/test`
+- to run the server test: `build/sbt server/test`
+- to test a single test case: `build/sbt  'test:testOnly *DeltaSharingSuite -- -z "table1"'`
 
 - The above commands won’t run the integration tests
   - you need to run `source ~/delta_sharing_oss_env.config` to set up the environment.
