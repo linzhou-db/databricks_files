@@ -4,8 +4,10 @@
 https://github.com/delta-io/delta-sharing#python-connector-1
 
 - test a single test case in python
+
+Use `-s` to output debug to console.
 ```
-$python/dev/pytest /Users/lin.zhou/delta-sharing/python/delta_sharing/tests/test_delta_sharing.py -k "test_load_as_spark"
+$python/dev/pytest -s /Users/lin.zhou/delta-sharing/python/delta_sharing/tests/test_delta_sharing.py -k "test_load_as_spark"
 ```
 - To test load_as_spark on latest scala changes, need to release 1.0.0-SNAPSHOT locally, update the `spark.jars.packages` in `test_delta_sharing.py`
 There are lots of caches playing around, so make sure to add lots of print debug info to test.
