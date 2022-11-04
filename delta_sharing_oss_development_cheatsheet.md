@@ -18,6 +18,10 @@ $ls /Users/lin.zhou/.m2/repository/io/delta/delta-sharing-spark_2.12/
 
 ```
 
+!!! Remove cached jars from the output of the command:
+```
+$find ~/.ivy2 | grep delta-sharing
+```
 
 ## Run spark/scala Tests
 
