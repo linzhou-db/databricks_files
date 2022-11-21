@@ -89,6 +89,15 @@ git clean -f
 git clean -fd
 ```
 
+When seeing the error:
+```
+fatal: 'databricks/dbr-branch-12.0' is not a commit and a branch 'SC-115823-proto-12.0' cannot be created from it
+```
+Run
+```
+git fetch -all
+```
+
 # PR Dev
 ### Run a universe test
 ```
