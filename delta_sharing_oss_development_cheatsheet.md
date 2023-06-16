@@ -36,3 +36,14 @@ $find ~/.ivy2 | grep delta-sharing
   - you also need to set up the gcs creds, run `export GOOGLE_APPLICATION_CREDENTIALS=/Users/lin.zhou/delta_sharing_oss_gcp_creds.config
 
 - sbt also supports run only a few tests in a test suite, you can check examples here: https://github.com/delta-io/delta#building
+
+
+## Clone repo
+
+```
+gh repo clone delta-io/delta-sharing -- -b branch-0.6
+```
+
+```
+git clone git@github.com:linzhou-db/delta-sharing
+```
