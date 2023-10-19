@@ -188,7 +188,7 @@ kubectl config use-context staging-aws-us-west-2
 
 kubectl get pods | grep managed-catalog
 kubectl logs <pod-name>
-kubectl exec -it <pod-name> bash
+kubectl exec -it <pod-name> -- bash
 ```
 
 Another helpful command
