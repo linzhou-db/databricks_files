@@ -19,3 +19,18 @@ $git fetch allison compile-spark-master
 
 $git checkout -b DTS-2966-fetched FETCH_HEAD
 ```
+
+# Run anlaysis on mysql database for UC db changes
+1. Get access with `bin/tshx --env dev kube-login --all`
+2. start with `bin/click`
+3. Run the following
+```
+> context staging
+> namespace managed-catalog
+> pods
+```
+4. the pick a number, say `0`
+5. then `exec bash` to log into the pod
+6. then `scripts/mysql_console` to enter mysql
+
+Then you can run `explain + query`!
