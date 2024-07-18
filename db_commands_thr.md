@@ -71,7 +71,7 @@ fetch("https://lne-dev-concerts.cloud.databricks.com/ajax-api/2.1/unity-catalog/
 });
 ```
 
-# Spped up runtime test 
+# Speed up runtime test 
 ```
 SCALA_INCREMENTAL=true bazel run //sql/core:io.delta.sharing.spark.DeltaSharingDataSourceDeltaSuite
 ```
