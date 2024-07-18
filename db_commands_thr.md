@@ -76,3 +76,7 @@ fetch("https://lne-dev-concerts.cloud.databricks.com/ajax-api/2.1/unity-catalog/
 SCALA_INCREMENTAL=true bazel run //sql/core:io.delta.sharing.spark.DeltaSharingDataSourceDeltaSuite
 ```
 
+# Create Runtime PR
+```
+https://github.com/databricks/runtime-dev/pull/new/linzhou-db/ES-1133701-13.3
+```
